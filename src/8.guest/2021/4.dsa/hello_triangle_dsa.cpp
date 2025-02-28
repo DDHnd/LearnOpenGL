@@ -3,7 +3,7 @@
 
 #include <iostream>
 
-void framebuffer_size_callback(GLFWwindow* window, int width, int height);
+void CustomizedFrameBufferSizeCallBack(GLFWwindow* window, int width, int height);
 void processInput(GLFWwindow *window);
 
 const char* vertexShaderSource = "#version 330 core\n"
@@ -41,7 +41,7 @@ int main()
         return -1;
     }
     glfwMakeContextCurrent(window);
-    glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
+    glfwSetFramebufferSizeCallback(window, CustomizedFrameBufferSizeCallBack);
 
     if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
     {
@@ -141,7 +141,7 @@ void processInput(GLFWwindow* window)
         glfwSetWindowShouldClose(window, true);
 }
 
-void framebuffer_size_callback(GLFWwindow* window, int width, int height)
+void CustomizedFrameBufferSizeCallBack(GLFWwindow* window, int width, int height)
 {
     glViewport(0, 0, width, height);
 }
