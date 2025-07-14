@@ -12,7 +12,7 @@
 #include <iostream>
 
 void CustomizedFrameBufferSizeCallBack(GLFWwindow* window, int width, int height);
-void processInput(GLFWwindow *window);
+void CustomizedProcessInputHandle(GLFWwindow *window);
 
 // settings
 const unsigned int SCR_WIDTH = 800;
@@ -218,7 +218,7 @@ int main()
 
         // input
         // -----
-        processInput(window);
+        CustomizedProcessInputHandle(window);
 
         // render
         // ------
@@ -271,7 +271,7 @@ int main()
 
 // process all input: query GLFW whether relevant keys are pressed/released this frame and react accordingly
 // ---------------------------------------------------------------------------------------------------------
-void processInput(GLFWwindow *window)
+void CustomizedProcessInputHandle(GLFWwindow *window)
 {
     if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
         glfwSetWindowShouldClose(window, true);

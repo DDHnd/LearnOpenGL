@@ -16,7 +16,7 @@
 #include <learnopengl/shader.h>
 
 void CustomizedFrameBufferSizeCallBack(GLFWwindow* window, int width, int height);
-void processInput(GLFWwindow *window);
+void CustomizedProcessInputHandle(GLFWwindow *window);
 void RenderText(Shader &shader, std::string text, float x, float y, float scale, glm::vec3 color);
 
 // settings
@@ -174,7 +174,7 @@ int main()
     {
         // input
         // -----
-        processInput(window);
+        CustomizedProcessInputHandle(window);
 
         // render
         // ------
@@ -196,7 +196,7 @@ int main()
 
 // process all input: query GLFW whether relevant keys are pressed/released this frame and react accordingly
 // ---------------------------------------------------------------------------------------------------------
-void processInput(GLFWwindow *window)
+void CustomizedProcessInputHandle(GLFWwindow *window)
 {
     if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
         glfwSetWindowShouldClose(window, true);

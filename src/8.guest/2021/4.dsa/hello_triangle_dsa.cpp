@@ -4,7 +4,7 @@
 #include <iostream>
 
 void CustomizedFrameBufferSizeCallBack(GLFWwindow* window, int width, int height);
-void processInput(GLFWwindow *window);
+void CustomizedProcessInputHandle(GLFWwindow *window);
 
 const char* vertexShaderSource = "#version 330 core\n"
 "layout (location = 0) in vec3 aPos;\n"
@@ -118,7 +118,7 @@ int main()
 
     while (!glfwWindowShouldClose(window))
     {
-        processInput(window);
+        CustomizedProcessInputHandle(window);
         glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT);
         glUseProgram(shaderProgram);
@@ -135,7 +135,7 @@ int main()
     return 0;
 }
 
-void processInput(GLFWwindow* window)
+void CustomizedProcessInputHandle(GLFWwindow* window)
 {
     if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
         glfwSetWindowShouldClose(window, true);

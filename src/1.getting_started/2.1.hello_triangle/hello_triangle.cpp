@@ -4,7 +4,7 @@
 #include <iostream>
 
 void CustomizedFrameBufferSizeCallBack(GLFWwindow* window, int width, int height);
-void processInput(GLFWwindow *window);
+void CustomizedProcessInputHandle(GLFWwindow *window);
 
 // settings
 const unsigned int SCR_WIDTH = 800;
@@ -102,7 +102,7 @@ int main()
     float vertices[] = {
         -0.5f, -0.5f, 0.0f, // left  
          0.5f, -0.5f, 0.0f, // right 
-         0.0f,  0.5f, 0.0f  // top   
+         0.0f,  1.0f, 0.0f  // top   
     }; 
 
     unsigned int VBO, VAO;
@@ -134,7 +134,7 @@ int main()
     {
         // input
         // -----
-        processInput(window);
+        CustomizedProcessInputHandle(window);
 
         // render
         // ------
@@ -167,7 +167,7 @@ int main()
 
 // process all input: query GLFW whether relevant keys are pressed/released this frame and react accordingly
 // ---------------------------------------------------------------------------------------------------------
-void processInput(GLFWwindow *window)
+void CustomizedProcessInputHandle(GLFWwindow *window)
 {
     if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
         glfwSetWindowShouldClose(window, true);
